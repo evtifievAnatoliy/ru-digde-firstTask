@@ -12,7 +12,7 @@ import org.junit.Assert;
  *
  * @author Анатолий
  */
-public class ValidationTests {
+public class Tests {
     
    private FirstTask firstTask;
     
