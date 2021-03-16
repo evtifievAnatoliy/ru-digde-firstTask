@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args) {
         
         
-        FirsrTask firsrTask = new FirsrTask("3[xyz][xy]z");
+        FirstTask firsrTask = new FirstTask("2x2x2");
         System.out.println("Input sring: " + firsrTask.getStr());
         System.out.println("Unpacked sring: " + firsrTask.getUnpackedStr());
         

@@ -14,14 +14,14 @@ import java.util.Map;
  *
  * @author Анатолий
  */
-public class FirsrTask {
+public class FirstTask {
     
     private static final Map<Character, Character> MAP = new HashMap<>();
     private String str;
     private String unpackedStr;
     private boolean isValidated;
     
-    public FirsrTask(String str) {
+    public FirstTask(String str) {
         MAP.put('[', ']');
         this.str = str;
         isValidated = checkValidation();
@@ -146,7 +146,8 @@ public class FirsrTask {
             if(Character.isDigit(tempStr.charAt(i))){
                 String numberStr = rightStickNumberCounts(tempStr, i);
                 for (int j=0; j<Integer.parseInt(numberStr); j++)
-                    sb.append(String.valueOf(tempStr.charAt(i+numberStr.length())));
+                    if (i+numberStr.length()<tempStr.length())
+                        sb.append(String.valueOf(tempStr.charAt(i+numberStr.length())));
                 i = i + numberStr.length();    
             }
             else
@@ -201,7 +202,7 @@ public class FirsrTask {
     private boolean checkBracketsValidation(String str){
         String clearStr = str.replaceAll("[^\\[\\]]","");
         char[] mainArray = clearStr.toCharArray();
-        if (mainArray.length%2!=0 || mainArray.length==0)
+        if (mainArray.length%2!=0 /*|| mainArray.length==0*/)
             return false;
         
         if (mainArray.length == 2 && Character.valueOf(mainArray[1]).equals(MAP.get(mainArray[0])))
